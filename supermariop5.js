@@ -16,6 +16,7 @@ var coinImage;
 var goombaImage;
 var goombaDeadImage;
 var stompSound;
+var oofSound;
 function preload(){
   marioWalk1 = loadImage("sprites/mario/BSMW1.png");
   marioWalk2= loadImage("sprites/mario/BSMW2.png");
@@ -34,6 +35,7 @@ function preload(){
   soundFormats('mp3', 'wav');
   marioJumpSound = loadSound("sounds/Mario_Jump.wav");
   stompSound = loadSound("sounds/Stomp.wav")
+  oofSound = loadSound("sounds/Mario_Hurt.wav")
 }
 var walkSprite = 0;
 }
@@ -351,6 +353,7 @@ Goomba.prototype.collide = function(){
   if(this.y+16>m.y-28&&this.y-16<m.y+28&&this.x+32>m.x-15&&this.x<m.x+15&&m.yvel<=0&&!this.dead&&!m.hurt){
     m.hurt = true;
     m.health --;
+    oofSound.play();
   }
 }
 Goomba.prototype.display = function(){
