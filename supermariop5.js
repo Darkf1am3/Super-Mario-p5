@@ -1,23 +1,7 @@
 new p5()
 //load images and sounds
 {
-var marioWalk1;
-var marioWalk2;
-var marioWalk3;
-var marioJump1;
-var marioJump2;
-var marioJumpSound;
-var brickImage;
-var itemBlockHit;
-var itemBlock1;
-var itemBlock2;
-var itemBlock3;
-var itemBlock4;
-var coinImage;
-var goombaImage;
-var goombaDeadImage;
-var stompSound;
-var oofSound;
+var marioWalk1, marioWalk2, marioWalk3, marioJump1, marioJump2, marioJumpSound, brickImage,itemBlockHit, itemBlock1, itemBlock2, itemBlock3, itemBlock4, coinImage, goombaImage, goombaDeadImage, stompSound, oofSound;
 function preload(){
   marioWalk1 = loadImage("sprites/mario/BSMW1.png");
   marioWalk2= loadImage("sprites/mario/BSMW2.png");
@@ -405,3 +389,5 @@ function draw(){
   testItemBlock.run(mario);
   mario.run();
 }
+
+//Awesome Tanner!
