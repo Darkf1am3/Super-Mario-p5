@@ -1,3 +1,4 @@
+new p5()
 //load images and sounds
 {
 var marioWalk1;
@@ -175,8 +176,12 @@ Ground.prototype.collide = function(p){
   }
 }
 Ground.prototype.display = function(){
-  fill(209, 148, 62);
-  rect(this.x, this.y, this.width, this.height)
+  fill(255, 189, 96);
+  rect(this.x, this.y, this.width, this.height);
+  fill(53, 204, 55);
+  rect(this.x, this.y, 10, this.height);
+  rect(this.x, this.y, this.width, 10);
+  rect(this.x+this.width, this.y, 10, this.height)
 }
 var testGround = new Ground(100, 400, 500, 100);
 var testGround2 = new Ground(550, 300, 250, 300);
@@ -384,6 +389,7 @@ function setup(){
   createCanvas(800, 500);
   imageMode(CENTER);
   marioJumpSound.setVolume(1.5);
+  noStroke();
 }
 function draw(){
   background(106, 162, 252);
