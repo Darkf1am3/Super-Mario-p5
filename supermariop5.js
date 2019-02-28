@@ -56,7 +56,7 @@ var mario = {
     this.grounded = false;
   },
   update: function(){
-    this.xvel *= 0.95;
+    this.xvel *= 0.8;
     this.xvel = constrain(this.xvel, -4, 4);
     this.x += this.xvel;
     if(this.grounded){
@@ -69,11 +69,11 @@ var mario = {
   control: function(){
     if(keys[39]||keys.d){
       this.direction =  "right";
-      this.xvel += 0.35;
+      this.xvel += 1;
       this.moving = true;
     } else if(keys[37]||keys.a){
       this.direction = "left";
-      this.xvel -= 0.35;
+      this.xvel -= 1;
       this.moving = true;
     } else{
       this.moving = false;
@@ -160,12 +160,10 @@ Ground.prototype.collide = function(p){
   }
 }
 Ground.prototype.display = function(){
-  fill(255, 189, 96);
-  rect(this.x, this.y, this.width, this.height);
-  fill(53, 204, 55);
-  rect(this.x, this.y, 10, this.height);
-  rect(this.x, this.y, this.width, 10);
-  rect(this.x+this.width, this.y, 10, this.height)
+    fill(53, 150, 55);
+    rect(this.x, this.y, this.width, this.height);
+    fill(150, 100, 50);
+    rect(this.x+10,this.y+10,this.width-20,this.height-10);
 }
 var testGround = new Ground(100, 400, 500, 100);
 var testGround2 = new Ground(550, 300, 250, 300);
